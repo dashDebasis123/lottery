@@ -11,10 +11,9 @@ require("dotenv").config()
  */
 
 
-const SEPOLIA_RPC_URL =
-    process.env.SEPOLIA_RPC_URL || "https://eth-sepolia.g.alchemy.com/v2/YOUR-API-KEY"
+const SEPOLIA_RPC_URL = "https://eth-sepolia.g.alchemy.com/v2/rhFU6gtSqgHTwV2ImBhPCREANGrsZmma"
 
-const PRIVATE_KEY = process.env.PRIVATE_KEY || "0x"
+const PRIVATE_KEY = "0x63c1bde234ec7eea0d23064a18e4003ce9dfec4a742cbd1b8e3b58ac33969ab0"
 // optional
 
 
