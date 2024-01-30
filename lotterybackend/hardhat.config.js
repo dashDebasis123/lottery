@@ -3,23 +3,17 @@ require("@nomiclabs/hardhat-etherscan")
 require("hardhat-deploy")
 require("solidity-coverage")
 require("hardhat-gas-reporter")
+require("@nomiclabs/hardhat-ethers")
 require("hardhat-contract-sizer")
 require("dotenv").config()
 
-/**
- * @type import('hardhat/config').HardhatUserConfig
- */
+const SEPOLIA_RPC_URL ="https://eth-sepolia.g.alchemy.com/v2/rhFU6gtSqgHTwV2ImBhPCREANGrsZmma"
 
-
-const SEPOLIA_RPC_URL = "https://eth-sepolia.g.alchemy.com/v2/rhFU6gtSqgHTwV2ImBhPCREANGrsZmma"
-
-const PRIVATE_KEY = "0x63c1bde234ec7eea0d23064a18e4003ce9dfec4a742cbd1b8e3b58ac33969ab0"
-// optional
-
+const PRIVATE_KEY = process.env.PRIVATE_KEY || "0x"
 
 // Your API key for Etherscan, obtain one at https://etherscan.io/
-const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "Your etherscan API key"
-const POLYGONSCAN_API_KEY = process.env.POLYGONSCAN_API_KEY || "Your polygonscan API key"
+const ETHERSCAN_API_KEY =  "GJ4JZ2CA667A5216P7E35MH7TDFQCCM6IF"
+
 const REPORT_GAS = process.env.REPORT_GAS || false
 
 module.exports = {
@@ -44,25 +38,14 @@ module.exports = {
             saveDeployments: true,
             chainId: 11155111,
         },
-        
-        
+       
     },
     etherscan: {
         // yarn hardhat verify --network <NETWORK> <CONTRACT_ADDRESS> <CONSTRUCTOR_PARAMETERS>
         apiKey: {
             sepolia: ETHERSCAN_API_KEY,
-            polygon: POLYGONSCAN_API_KEY,
+            
         },
-        customChains: [
-            {
-                network: "goerli",
-                chainId: 5,
-                urls: {
-                    apiURL: "https://api-goerli.etherscan.io/api",
-                    browserURL: "https://goerli.etherscan.io",
-                },
-            },
-        ],
     },
     gasReporter: {
         enabled: REPORT_GAS,
