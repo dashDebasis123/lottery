@@ -25,9 +25,11 @@ module.exports = {
             //   url: MAINNET_RPC_URL
             // }
             chainId: 31337,
+            
         },
         localhost: {
             chainId: 31337,
+            
         },
         sepolia: {
             url: SEPOLIA_RPC_URL,
